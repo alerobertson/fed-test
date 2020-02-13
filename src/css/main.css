@@ -1,11 +1,13 @@
+@import './variables.css';
+
 * {
   box-sizing: border-box;
 }
 
 #q4Wrapper {
-  background-color: #2A3035;
-  font-family: "Roboto", sans-serif;
-  color: white;
+  background-color: var(--main-bg-color);
+  font-family: var(--main-font-family);
+  color: var(--main-text-color);
 }
 #q4Wrapper h1, #q4Wrapper h3 {
   margin: 0;
@@ -19,7 +21,7 @@
   text-transform: uppercase;
 }
 #q4Wrapper header, #q4Wrapper footer {
-  background-color: #22272B;
+  background-color: var(--secondary-bg-color);
 }
 #q4Wrapper header {
   padding: 20px;
@@ -38,7 +40,7 @@
 #q4Wrapper a {
   display: inline-block;
   text-decoration: none;
-  color: white;
+  color: var(--main-text-color);
   transition: transform 0.3s ease;
 }
 #q4Wrapper a:hover {
@@ -60,5 +62,19 @@
 
 /* Begin styling the report items here! */
 .reports {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap:30px;
+}
+.reports .reports_item {
+  margin-bottom: 30px;
+}
+.reports span {
+  display: inline-block;
+}
 
+@media only screen and (max-width: 768px) {
+  .reports {
+      grid-template-columns: repeat(2, 1fr);
+  }
 }
